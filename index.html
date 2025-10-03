@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuadros de Texto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="texto active"><p>Ah yess...
+        VOLVIERON LOS VOUCHERS!!!</p>
+        <div class="imagenes">
+        <img src="https://i.pinimg.com/236x/21/90/60/219060844912642184576ce4c6ae6bcb.jpg" alt="Imagen1">
+        </div>
+    </div>
+    <div class="texto"><p>Pero esta vez... tenes que usarlos pronto.</p>
+        <div class="imagenes">
+        <img src="https://cdn.awsli.com.br/1594/1594408/produto/148206673783c2c99b3.jpg" alt="Imagen2">
+        </div>
+    </div>
+    <div class="texto"><p>Porque por haberte ganado mi corazón...
+        te ganaste un premio!! woooow!!</p>
+        <div class="imagenes">
+            <img src="https://i.pinimg.com/564x/07/c6/c6/07c6c687433408cce18737d71916a6b3.jpg" alt="imagen">
+        </div>
+    </div>
+    <div class="texto">Y dicho premio consta deeee...
+    </div>
+    <div class="texto">No una... No tres... No cinco...
+        Sino DOS entradas!!! WOOOW
+    </div>
+    <div class="texto">Asi es!! DOS entradas para ver aaa...
+    </div>
+
+    <div class="texto">
+      <p>HAMILTON</p>
+      <div class="imagenes">
+          <img src="https://cdn-3.expansion.mx/dims4/default/156c422/2147483647/strip/true/crop/1024x683+0+0/resize/1200x800!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Fb3%2Fbe%2F55e990de4b31af38cd40a935073e%2Flewis-hamilton-ferrari-f1.jpg" alt="Imagen 3">
+      </div>
+    </div>
+
+    <div class="texto">digo...</div>
+
+    <div class="texto">
+      <p>HAMILTON!!</p>
+      <div class="imagenes">
+          <img src="https://sacnkprodarcms.blob.core.windows.net/content/posters/HO00010947.jpg" alt="Imagen 4">
+      </div>
+      <p>Que los disfrutes!</p>
+    </div>
+    
+        <div class="texto">
+            <p>Feliz Aniversario
+           ❤ Te amo, siempre ❤</p>
+            <div class="imagenes">
+          <img src="https://i.pinimg.com/originals/48/68/fb/4868fbbf48c977bc109b93f3ab92ff16.png" alt="Imagen 5">
+          </div>
+    </div>
+    <div class="botones">
+      <button onclick="cambiarTexto(-1)">Anterior</button>
+      <button onclick="cambiarTexto(1)">Siguiente</button>
+    </div>
+  </div>
+
+  <script>
+    let indice = 0;
+    const textos = document.querySelectorAll(".texto");
+
+    function mostrarTexto(n) {
+      textos.forEach((t, i) => t.classList.toggle("active", i === n));
+    }
+
+    function cambiarTexto(direccion) {
+      indice = (indice + direccion + textos.length) % textos.length;
+      mostrarTexto(indice);
+    }
+  </script>
+</body>
+</html>
